@@ -1,0 +1,1629 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cursos online en vivo de minería, hidrocarburos, medio ambiente e integridad industrial con Geoteknia Group.">
+  <meta name="theme-color" content="#023d1b">
+  <title>Geoteknia Group | Capacitación técnica especializada</title>
+
+  <style>
+    :root {
+      --green-950: #012814;
+      --green-900: #023d1b;
+      --green-800: #075326;
+      --green-700: #0a692c;
+      --green-500: #218a47;
+      --gold-500: #f1a619;
+      --gold-400: #f7be46;
+      --ink: #18201b;
+      --muted: #657068;
+      --line: #dce6de;
+      --surface: #ffffff;
+      --surface-alt: #f4f7f4;
+      --shadow: 0 18px 50px rgba(1, 40, 20, .13);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    section { scroll-margin-top: 92px; }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green-700);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--gold-500);
+    }
+
+    .section-title {
+      margin: 12px 0 14px;
+      color: var(--green-950);
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.06;
+      letter-spacing: -.045em;
+    }
+
+    .section-lead {
+      max-width: 710px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .topbar {
+      background: var(--green-950);
+      color: #fff;
+      font-size: .9rem;
+    }
+
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .topbar strong { color: var(--gold-400); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid rgba(7, 83, 38, .10);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .brand img {
+      width: 172px;
+      height: 58px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-weight: 700;
+      font-size: .94rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: #304238;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -7px;
+      height: 2px;
+      background: var(--gold-500);
+      transition: right .25s ease;
+    }
+
+    .nav-links a:hover::after { right: 0; }
+
+    .nav-cta, .btn {
+      border: 0;
+      border-radius: 999px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .nav-cta {
+      min-height: 46px;
+      padding: 0 20px;
+      color: #102516;
+      background: var(--gold-500);
+      box-shadow: 0 10px 25px rgba(241, 166, 25, .25);
+    }
+
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      color: var(--green-900);
+      font-size: 1.3rem;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 24%, rgba(241, 166, 25, .19), transparent 25%),
+        linear-gradient(115deg, rgba(1, 40, 20, .98) 0%, rgba(2, 61, 27, .93) 52%, rgba(7, 83, 38, .86) 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("assets/curso-geoestadistica.jpg");
+      background-position: 74% center;
+      background-size: cover;
+      opacity: .20;
+      filter: saturate(.8);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -110px 45%;
+      height: 260px;
+      z-index: -1;
+      transform: rotate(-5deg);
+      background: linear-gradient(90deg, transparent, rgba(241, 166, 25, .23));
+      border-radius: 50%;
+      filter: blur(8px);
+    }
+
+    .hero-grid {
+      min-height: 680px;
+      padding: 86px 0 92px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+      margin: 16px 0 22px;
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 span { color: var(--gold-400); }
+
+    .hero-copy > p {
+      max-width: 690px;
+      margin: 0;
+      color: rgba(255,255,255,.84);
+      font-size: clamp(1.06rem, 2vw, 1.23rem);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      min-height: 54px;
+      padding: 0 24px;
+    }
+
+    .btn-primary {
+      background: var(--gold-500);
+      color: #142418;
+      box-shadow: 0 14px 34px rgba(241,166,25,.24);
+    }
+
+    .btn-secondary {
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.30);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 13px;
+      margin-top: 38px;
+      max-width: 650px;
+    }
+
+    .hero-point {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: rgba(255,255,255,.9);
+      font-weight: 700;
+      font-size: .93rem;
+    }
+
+    .check {
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-950);
+      background: var(--gold-400);
+      font-size: .8rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 26px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.19);
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-panel img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .hero-panel-card {
+      position: absolute;
+      left: -26px;
+      bottom: 24px;
+      width: min(290px, 78%);
+      padding: 18px 20px;
+      color: var(--ink);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel-card small {
+      color: var(--green-700);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .hero-panel-card strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 1.12rem;
+      line-height: 1.3;
+    }
+
+    .quick-stats {
+      position: relative;
+      z-index: 5;
+      margin-top: -38px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 24px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child { border-right: 0; }
+    .stat strong {
+      display: block;
+      color: var(--green-900);
+      font-size: 1.08rem;
+    }
+    .stat span { color: var(--muted); font-size: .9rem; }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section.alt {
+      background: var(--surface-alt);
+    }
+
+    .areas-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .area-card {
+      min-height: 220px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 10px 35px rgba(1,40,20,.06);
+      transition: transform .22s ease, box-shadow .22s ease, border .22s ease;
+    }
+
+    .area-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(241,166,25,.5);
+      box-shadow: var(--shadow);
+    }
+
+    .area-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green-700), var(--green-950));
+      font-size: 1.5rem;
+      box-shadow: 0 10px 25px rgba(2,61,27,.18);
+    }
+
+    .area-card h3 {
+      margin: 20px 0 9px;
+      color: var(--green-950);
+      line-height: 1.2;
+    }
+
+    .area-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .courses-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      min-height: 40px;
+      padding: 0 15px;
+      border-radius: 999px;
+      border: 1px solid #cbd8ce;
+      color: var(--green-900);
+      background: #fff;
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+    .filter-btn.active {
+      color: #fff;
+      background: var(--green-900);
+      border-color: var(--green-900);
+    }
+
+    .courses-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .course-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 38px rgba(1,40,20,.08);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .course-image-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--surface-alt);
+    }
+
+    .course-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .course-card:hover img { transform: scale(1.035); }
+
+    .course-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(1,40,20,.90);
+      font-weight: 850;
+      font-size: .77rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      backdrop-filter: blur(5px);
+    }
+
+    .course-body {
+      padding: 23px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .course-body h3 {
+      margin: 0;
+      color: var(--green-950);
+      font-size: 1.22rem;
+      line-height: 1.27;
+      letter-spacing: -.025em;
+    }
+
+    .course-meta {
+      margin: 20px 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .meta-row strong { color: var(--ink); }
+    .price { color: var(--green-800) !important; font-size: 1.07rem; }
+
+    .course-actions {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-card {
+      min-height: 46px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.1;
+      border-radius: 13px;
+      border: 1px solid var(--green-700);
+      font-weight: 850;
+      background: #fff;
+      color: var(--green-800);
+    }
+
+    .btn-card.primary {
+      border-color: var(--gold-500);
+      color: #102516;
+      background: var(--gold-500);
+    }
+
+    .benefits-grid {
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .benefit-media {
+      position: relative;
+      min-height: 520px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-media img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+    }
+
+    .benefit-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(1,40,20,.8), transparent 55%);
+    }
+
+    .benefit-badge {
+      position: absolute;
+      z-index: 2;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      padding: 21px;
+      border-radius: 18px;
+      color: #fff;
+      background: rgba(1,40,20,.78);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .benefit-badge strong {
+      display: block;
+      color: var(--gold-400);
+      font-size: 1.22rem;
+    }
+
+    .benefits-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .benefit-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 15px;
+      align-items: start;
+      padding: 19px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .benefit-item .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--green-900);
+      background: #eaf3ec;
+      font-size: 1.25rem;
+    }
+
+    .benefit-item h3 {
+      margin: 1px 0 4px;
+      color: var(--green-950);
+      font-size: 1.02rem;
+    }
+
+    .benefit-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      padding: 68px;
+      color: #fff;
+      background: linear-gradient(130deg, var(--green-950), var(--green-700));
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      top: -90px;
+      border: 38px solid rgba(241,166,25,.16);
+      border-radius: 50%;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 42px;
+    }
+
+    .cta h2 {
+      margin: 8px 0 12px;
+      max-width: 700px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255,255,255,.8);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 62px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      min-height: 66px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      border: 0;
+      color: var(--green-950);
+      background: transparent;
+      text-align: left;
+      font-weight: 850;
+    }
+
+    .faq-question span:last-child {
+      font-size: 1.3rem;
+      color: var(--gold-500);
+      transition: transform .2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-question span:last-child { transform: rotate(45deg); }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border-radius: 28px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--green-950), var(--green-700));
+    }
+
+    .contact-info h2 {
+      margin: 14px 0;
+      font-size: 2.4rem;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .contact-info p { color: rgba(255,255,255,.78); }
+
+    .contact-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .contact-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 750;
+    }
+
+    .contact-point i {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: var(--green-950);
+      background: var(--gold-400);
+      font-style: normal;
+    }
+
+    .contact-form {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 14px 45px rgba(1,40,20,.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green-950);
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid #cdd8cf;
+      border-radius: 13px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: #fbfcfb;
+      outline: none;
+    }
+
+    .field textarea { min-height: 122px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--green-500);
+      box-shadow: 0 0 0 4px rgba(33,138,71,.10);
+    }
+
+    .form-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .footer {
+      padding: 54px 0 24px;
+      color: rgba(255,255,255,.82);
+      background: var(--green-950);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr .65fr;
+      gap: 50px;
+    }
+
+    .footer-logo {
+      width: 210px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .footer h3 {
+      margin: 0 0 13px;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+      font-size: .92rem;
+    }
+
+    .footer-bottom {
+      margin-top: 42px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      font-size: .82rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 120;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 50%;
+      background: #18a94b;
+      box-shadow: 0 14px 34px rgba(24,169,75,.35);
+      border: 3px solid #fff;
+      overflow: hidden;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(1,20,10,.72);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal.open { display: grid; }
+
+    .modal-card {
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 30px 100px rgba(0,0,0,.32);
+    }
+
+    .modal-head {
+      padding: 25px 27px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #fff;
+      background: var(--green-950);
+    }
+
+    .modal-head h3 { margin: 0; line-height: 1.25; }
+    .modal-close {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.26);
+      border-radius: 12px;
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      font-size: 1.25rem;
+    }
+
+    .modal-body { padding: 27px; }
+    .modal-body img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: var(--surface-alt);
+    }
+
+    .modal-details {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .modal-detail {
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--surface-alt);
+    }
+
+    .modal-detail small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .modal-detail strong { color: var(--green-900); }
+
+    .modal-copy {
+      margin: 22px 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links { gap: 18px; }
+      .hero-grid { gap: 40px; }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .courses-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 840px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-cta { display: none; }
+      .nav-links {
+        position: fixed;
+        top: 114px;
+        left: 18px;
+        right: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+
+      .hero-grid {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding: 70px 0 100px;
+      }
+      .hero-panel { max-width: 560px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .benefits-grid, .faq-layout, .contact-wrap { grid-template-columns: 1fr; }
+      .courses-header { align-items: flex-start; flex-direction: column; }
+      .filters { justify-content: flex-start; }
+      .cta { padding: 48px 34px; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .brand img { width: 144px; }
+      .hero h1 { font-size: 2.75rem; }
+      .hero-points { grid-template-columns: 1fr; }
+      .hero-panel-card { left: 12px; right: 12px; width: auto; bottom: 12px; }
+      .quick-stats { margin-top: -24px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+      .stat:last-child { border-bottom: 0; }
+      .section { padding: 78px 0; }
+      .areas-grid, .courses-grid { grid-template-columns: 1fr; }
+      .course-actions { grid-template-columns: 1fr; }
+      .benefit-media { min-height: 430px; }
+      .cta { padding: 38px 24px; border-radius: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .contact-info, .contact-form { padding: 28px 22px; }
+      .footer-bottom { flex-direction: column; }
+      .modal-details { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Próximos cursos online en vivo</span>
+      <span>•</span>
+      <strong>Inicio 3 de agosto</strong>
+      <span>•</span>
+      <span>Inscripciones abiertas</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Geoteknia Group, inicio">
+        <img src="assets/logo.png" alt="Geoteknia Group">
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#areas">Áreas</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="nav-cta" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20recibir%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Geoteknia%20Group." target="_blank" rel="noopener">
+        WhatsApp
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" style="color:#f7be46">Capacitación profesional especializada</span>
+          <h1>Conocimiento técnico para <span>impulsar tu desarrollo profesional</span></h1>
+          <p>
+            Cursos online en vivo orientados a minería, hidrocarburos, medio ambiente,
+            integridad industrial y cumplimiento normativo.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cursos">Explorar cursos</a>
+            <a class="btn btn-secondary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20conocer%20los%20pr%C3%B3ximos%20cursos%20de%20Geoteknia%20Group." target="_blank" rel="noopener">
+              Solicitar información
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point"><span class="check">✓</span> Clases online en vivo</div>
+            <div class="hero-point"><span class="check">✓</span> Contenido técnico especializado</div>
+            <div class="hero-point"><span class="check">✓</span> Constancia digital con QR</div>
+            <div class="hero-point"><span class="check">✓</span> Atención directa por WhatsApp</div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <img src="assets/curso-integridad-ductos.jpg" alt="Curso de integridad de ductos de Geoteknia Group">
+          <div class="hero-panel-card">
+            <small>Inscripciones abiertas</small>
+            <strong>Programas técnicos para profesionales y estudiantes del sector industrial.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>100% online</strong><span>Acceso desde cualquier lugar</span></div>
+        <div class="stat"><strong>Sesiones en vivo</strong><span>Participación en tiempo real</span></div>
+        <div class="stat"><strong>Constancia digital</strong><span>Con QR y folio válido</span></div>
+        <div class="stat"><strong>Soporte directo</strong><span>Atención por WhatsApp</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="areas">
+      <div class="container">
+        <span class="eyebrow">Áreas de capacitación</span>
+        <h2 class="section-title">Formación enfocada en sectores estratégicos</h2>
+        <p class="section-lead">
+          Encuentra programas especializados para fortalecer conocimientos técnicos,
+          normativos y operativos aplicables a la industria.
+        </p>
+
+        <div class="areas-grid">
+          <article class="area-card">
+            <div class="area-icon">⛏</div>
+            <h3>Minería y recursos minerales</h3>
+            <p>Geoestadística, muestreo, QA/QC, control de datos y gestión de recursos.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon">◉</div>
+            <h3>Hidrocarburos y energía</h3>
+            <p>Cadena productiva, gestión, integridad, eficiencia y descarbonización.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon">⚙</div>
+            <h3>Integridad industrial</h3>
+            <p>Ductos, materiales, diagnóstico técnico y prevención de fallas.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon">♻</div>
+            <h3>Medio ambiente y regulación</h3>
+            <p>Impacto ambiental, cumplimiento regulatorio y gestión estratégica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="cursos">
+      <div class="container">
+        <div class="courses-header">
+          <div>
+            <span class="eyebrow">Próximos cursos</span>
+            <h2 class="section-title">Elige el programa que necesitas</h2>
+            <p class="section-lead">
+              Consulta los cursos disponibles y solicita tu inscripción directamente por WhatsApp.
+            </p>
+          </div>
+
+          <div class="filters" aria-label="Filtrar cursos">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="mineria">Minería</button>
+            <button class="filter-btn" data-filter="hidrocarburos">Hidrocarburos</button>
+            <button class="filter-btn" data-filter="ambiental">Ambiental</button>
+            <button class="filter-btn" data-filter="integridad">Integridad</button>
+          </div>
+        </div>
+
+        <div class="courses-grid" id="coursesGrid">
+          <article class="course-card" data-category="hidrocarburos">
+            <div class="course-image-wrap">
+              <img src="assets/curso-hidrocarburos.jpg" alt="Cadena productiva de los hidrocarburos">
+              <span class="course-category">Hidrocarburos</span>
+            </div>
+            <div class="course-body">
+              <h3>Cadena Productiva de los Hidrocarburos: Gestión Avanzada, Integridad y Descarbonización</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$550 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="Cadena Productiva de los Hidrocarburos: Gestión Avanzada, Integridad y Descarbonización"
+                  data-category="Hidrocarburos"
+                  data-price="$550 MXN"
+                  data-image="assets/curso-hidrocarburos.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20Cadena%20Productiva%20de%20los%20Hidrocarburos." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="ambiental">
+            <div class="course-image-wrap">
+              <img src="assets/curso-impacto-ambiental.jpg" alt="Evaluación de impacto ambiental">
+              <span class="course-category">Ambiental</span>
+            </div>
+            <div class="course-body">
+              <h3>Evaluación de Impacto Ambiental: Cumplimiento y Gestión Estratégica</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$550 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="Evaluación de Impacto Ambiental: Cumplimiento y Gestión Estratégica"
+                  data-category="Medio ambiente"
+                  data-price="$550 MXN"
+                  data-image="assets/curso-impacto-ambiental.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20Evaluaci%C3%B3n%20de%20Impacto%20Ambiental." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="mineria">
+            <div class="course-image-wrap">
+              <img src="assets/curso-geoestadistica.jpg" alt="Geoestadística avanzada y gestión de recursos minerales">
+              <span class="course-category">Minería</span>
+            </div>
+            <div class="course-body">
+              <h3>Geoestadística Avanzada y Gestión de Recursos Minerales</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$550 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="Geoestadística Avanzada y Gestión de Recursos Minerales"
+                  data-category="Minería"
+                  data-price="$550 MXN"
+                  data-image="assets/curso-geoestadistica.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20Geoestad%C3%ADstica%20Avanzada%20y%20Gesti%C3%B3n%20de%20Recursos%20Minerales." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="integridad">
+            <div class="course-image-wrap">
+              <img src="assets/curso-integridad-ductos.jpg" alt="Integridad de ductos y ciencia de materiales">
+              <span class="course-category">Integridad</span>
+            </div>
+            <div class="course-body">
+              <h3>Integridad de Ductos y Ciencia de Materiales</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$500 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="Integridad de Ductos y Ciencia de Materiales"
+                  data-category="Integridad industrial"
+                  data-price="$500 MXN"
+                  data-image="assets/curso-integridad-ductos.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20Integridad%20de%20Ductos%20y%20Ciencia%20de%20Materiales." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="ambiental">
+            <div class="course-image-wrap">
+              <img src="assets/curso-normatividad.jpg" alt="Normatividad ambiental y cumplimiento regulatorio">
+              <span class="course-category">Ambiental</span>
+            </div>
+            <div class="course-body">
+              <h3>Normatividad Ambiental y Cumplimiento Regulatorio</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$550 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="Normatividad Ambiental y Cumplimiento Regulatorio"
+                  data-category="Medio ambiente"
+                  data-price="$550 MXN"
+                  data-image="assets/curso-normatividad.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20Normatividad%20Ambiental%20y%20Cumplimiento%20Regulatorio." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card" data-category="mineria">
+            <div class="course-image-wrap">
+              <img src="assets/curso-qaqc.jpg" alt="QA QC en muestreo minero y control de calidad de datos">
+              <span class="course-category">Minería</span>
+            </div>
+            <div class="course-body">
+              <h3>QA/QC en Muestreo Minero y Control de Calidad de Datos</h3>
+              <div class="course-meta">
+                <div class="meta-row"><span>Fecha de inicio</span><strong>3 de agosto</strong></div>
+                <div class="meta-row"><span>Modalidad</span><strong>Online en vivo</strong></div>
+                <div class="meta-row"><span>Inversión</span><strong class="price">$550 MXN</strong></div>
+              </div>
+              <div class="course-actions">
+                <button class="btn-card details-btn"
+                  data-title="QA/QC en Muestreo Minero y Control de Calidad de Datos"
+                  data-category="Minería"
+                  data-price="$550 MXN"
+                  data-image="assets/curso-qaqc.jpg">Ver información</button>
+                <a class="btn-card primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20al%20curso%20QA%2FQC%20en%20Muestreo%20Minero%20y%20Control%20de%20Calidad%20de%20Datos." target="_blank" rel="noopener">Inscribirme</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <span class="eyebrow">Experiencia Geoteknia</span>
+        <h2 class="section-title">Una experiencia clara, práctica y profesional</h2>
+
+        <div class="benefits-grid">
+          <div class="benefit-media">
+            <img src="assets/curso-qaqc.jpg" alt="Capacitación técnica Geoteknia Group">
+            <div class="benefit-badge">
+              <strong>Aprendizaje técnico aplicado</strong>
+              Programas orientados a áreas estratégicas de la industria.
+            </div>
+          </div>
+
+          <div class="benefits-list">
+            <article class="benefit-item">
+              <div class="icon">▣</div>
+              <div><h3>Clases online en vivo</h3><p>Participa en sesiones en tiempo real desde cualquier ubicación.</p></div>
+            </article>
+            <article class="benefit-item">
+              <div class="icon">✓</div>
+              <div><h3>Constancia digital</h3><p>Recibe una constancia con código QR y folio válido al cumplir los requisitos.</p></div>
+            </article>
+            <article class="benefit-item">
+              <div class="icon">⌁</div>
+              <div><h3>Contenido especializado</h3><p>Temas técnicos enfocados en minería, energía, ambiente e integridad industrial.</p></div>
+            </article>
+            <article class="benefit-item">
+              <div class="icon">◌</div>
+              <div><h3>Atención personalizada</h3><p>Resuelve dudas sobre inscripción y acceso mediante atención directa por WhatsApp.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="cta">
+          <div class="cta-inner">
+            <div>
+              <span class="eyebrow" style="color:#f7be46">Inscripciones abiertas</span>
+              <h2>Da el siguiente paso en tu formación técnica</h2>
+              <p>Selecciona tu curso y solicita ahora la información de inscripción.</p>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20inscribirme%20a%20un%20curso%20de%20Geoteknia%20Group." target="_blank" rel="noopener">
+              Hablar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas">
+      <div class="container faq-layout">
+        <div>
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 class="section-title">Información antes de inscribirte</h2>
+          <p class="section-lead">Resolvemos las dudas principales sobre modalidad, constancias, pagos y acceso.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item open">
+            <button class="faq-question"><span>¿Las clases son en vivo?</span><span>+</span></button>
+            <div class="faq-answer">Sí. Los cursos publicados se imparten en modalidad online en vivo.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question"><span>¿La constancia incluye QR y folio?</span><span>+</span></button>
+            <div class="faq-answer">Sí. Los cursos incluyen constancia digital con código QR y folio válido, de acuerdo con las condiciones comunicadas en cada programa.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question"><span>¿Cómo solicito mi inscripción?</span><span>+</span></button>
+            <div class="faq-answer">Selecciona el curso y presiona “Inscribirme”. Se abrirá WhatsApp con un mensaje preparado para solicitar la información correspondiente.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question"><span>¿Cuáles son los métodos de pago?</span><span>+</span></button>
+            <div class="faq-answer">Los métodos y datos de pago se comparten directamente durante el proceso de inscripción por WhatsApp.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question"><span>¿Cómo recibiré el acceso?</span><span>+</span></button>
+            <div class="faq-answer">Después de confirmar la inscripción, el equipo de Geoteknia Group compartirá las indicaciones de acceso mediante los datos de contacto proporcionados.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contacto">
+      <div class="container contact-wrap">
+        <div class="contact-info">
+          <span class="eyebrow" style="color:#f7be46">Contacto</span>
+          <h2>Encuentra el curso ideal para ti</h2>
+          <p>Envíanos tus datos y prepararemos un mensaje de WhatsApp para atender tu solicitud.</p>
+
+          <div class="contact-points">
+            <div class="contact-point"><i>W</i><span>WhatsApp: 297 106 1800</span></div>
+            <div class="contact-point"><i>F</i><span>Facebook: GEOTEKNIA</span></div>
+            <div class="contact-point"><i>I</i><span>Instagram: GEOTEKNIA</span></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" required placeholder="Tu nombre">
+            </div>
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" required placeholder="Tu número">
+            </div>
+            <div class="field full">
+              <label for="course">Curso de interés</label>
+              <select id="course" name="course" required>
+                <option value="">Selecciona un curso</option>
+                <option>Cadena Productiva de los Hidrocarburos</option>
+                <option>Evaluación de Impacto Ambiental</option>
+                <option>Geoestadística Avanzada</option>
+                <option>Integridad de Ductos y Ciencia de Materiales</option>
+                <option>Normatividad Ambiental y Cumplimiento Regulatorio</option>
+                <option>QA/QC en Muestreo Minero</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Escribe tu consulta"></textarea>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit" style="width:100%">Enviar por WhatsApp</button>
+              <p class="form-note">Este formulario no almacena información; genera un mensaje para continuar en WhatsApp.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/logo.png" alt="Geoteknia Group">
+          <p>Capacitación especializada para profesionales y estudiantes de sectores técnicos e industriales.</p>
+        </div>
+        <div>
+          <h3>Navegación</h3>
+          <div class="footer-links">
+            <a href="#areas">Áreas</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#preguntas">Preguntas frecuentes</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <div class="footer-links">
+            <a href="https://wa.me/522971061800" target="_blank" rel="noopener">297 106 1800</a>
+            <span>Facebook: GEOTEKNIA</span>
+            <span>Instagram: GEOTEKNIA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Geoteknia Group. Todos los derechos reservados.</span>
+        <span>Aviso de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/522971061800?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20Geoteknia%20Group." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <img src="assets/whatsapp-logo.png" alt="WhatsApp">
+  </a>
+
+  <div class="modal" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="modalTitle">Información del curso</h3>
+        <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="">
+        <div class="modal-details">
+          <div class="modal-detail"><small>Fecha</small><strong>3 de agosto</strong></div>
+          <div class="modal-detail"><small>Modalidad</small><strong>Online en vivo</strong></div>
+          <div class="modal-detail"><small>Inversión</small><strong id="modalPrice"></strong></div>
+        </div>
+        <p class="modal-copy">
+          Incluye acceso al curso online en vivo y constancia digital con código QR y folio válido.
+          Solicita por WhatsApp la información completa de inscripción.
+        </p>
+        <a class="btn btn-primary" id="modalWhatsApp" href="#" target="_blank" rel="noopener" style="width:100%">Solicitar inscripción</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+        courseCards.forEach(card => {
+          card.style.display = filter === 'todos' || card.dataset.category === filter ? 'flex' : 'none';
+        });
+      });
+    });
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        button.closest('.faq-item').classList.toggle('open');
+      });
+    });
+
+    const modal = document.getElementById('courseModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalWhatsApp = document.getElementById('modalWhatsApp');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.details-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const title = button.dataset.title;
+        modalTitle.textContent = title;
+        modalImage.src = button.dataset.image;
+        modalImage.alt = title;
+        modalPrice.textContent = button.dataset.price;
+        modalWhatsApp.href = 'https://wa.me/522971061800?text=' + encodeURIComponent('Hola, deseo recibir información e inscribirme al curso: ' + title + '.');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', event => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeModal();
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const course = document.getElementById('course').value;
+      const message = document.getElementById('message').value.trim();
+
+      const text = [
+        'Hola, deseo recibir información de Geoteknia Group.',
+        '',
+        'Nombre: ' + name,
+        'Teléfono: ' + phone,
+        'Curso de interés: ' + course,
+        message ? 'Mensaje: ' + message : ''
+      ].filter(Boolean).join('\n');
+
+      window.open('https://wa.me/522971061800?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>

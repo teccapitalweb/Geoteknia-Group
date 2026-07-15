@@ -1,0 +1,22 @@
+GEOTEKNIA GROUP — LANDING PAGE
+
+Contenido:
+- index.html
+- carpeta assets con el logo y los seis flyers
+
+Uso:
+1. Descomprime la carpeta.
+2. Abre index.html en tu navegador.
+3. Para publicarla, sube index.html y la carpeta assets al mismo directorio de tu hosting.
+
+Datos incluidos:
+- WhatsApp: 297 106 1800
+- Facebook: GEOTEKNIA
+- Instagram: GEOTEKNIA
+- Inicio de cursos: 3 de agosto
+- Diseño responsive para computadora, tableta y celular
+
+Notas:
+- No incluye secciones de instructores ni testimonios.
+- El formulario genera un mensaje de WhatsApp; no almacena datos.
+- Los enlaces de aviso de privacidad y términos son visuales hasta que se agreguen los documentos definitivos.
